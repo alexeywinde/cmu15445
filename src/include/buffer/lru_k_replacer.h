@@ -13,15 +13,19 @@
 #pragma once
 
 #include <limits>
+#include <climits>
 #include <list>
 #include <mutex>  // NOLINT
 #include <unordered_map>
 #include <vector>
 
+
 #include "common/config.h"
 #include "common/macros.h"
 
 namespace bustub {
+
+
 
 /**
  * LRUKReplacer implements the LRU-k replacement policy.
@@ -135,11 +139,25 @@ class LRUKReplacer {
  private:
   // TODO(student): implement me! You can replace these member variables as you like.
   // Remove maybe_unused if you start using them.
-  [[maybe_unused]] size_t current_timestamp_{0};
-  [[maybe_unused]] size_t curr_size_{0};
-  [[maybe_unused]] size_t replacer_size_;
-  [[maybe_unused]] size_t k_;
+  size_t current_timestamp_{0};
+  size_t curr_size_{0};
+  size_t replacer_size_;//the number of  pinned frames.
+  size_t k_;
+  size_t max_size;
   std::mutex latch_;
+
+
+  using timestamp=size_t;
+  using k_distance=std::pair<frame_id_t,size_t>;
+
+  std::unordered_map<frame_id_t,bool> frame_evict_;
+
+  std::unordered_map<frame_id_t,std::list<timestamp> > hist_timestamp_;
+
+  std::list<k_distance> cache_frame_;
+
+  std::unordered_map<frame_id_t,std::list<k_distance>::iterator> cache_k_;
+  std::unordered_map<frame_id_t,std::list<k_distance>::iterator> cache_le_k_;
 };
 
 }  // namespace bustub

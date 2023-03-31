@@ -42,37 +42,27 @@ class ExtendibleHashTable : public HashTable<K, V> {
    * @brief Create a new ExtendibleHashTable.
    * @param bucket_size: fixed size for each bucket
    */
-  explicit ExtendibleHashTable(size_t bucket_size){
-	Bucket.size_=bucket_size;
-	bucket_size_=bucket_size;
-
-	}
+  explicit ExtendibleHashTable(size_t bucket_size);
 
   /**
    * @brief Get the global depth of the directory.
    * @return The global depth of the directory.
    */
-  auto GetGlobalDepth() const -> int{
-	 return global_depth_;
-	}
+  auto GetGlobalDepth() const -> int;
 
   /**
    * @brief Get the local depth of the bucket that the given directory index points to.
    * @param dir_index The index in the directory.
    * @return The local depth of the bucket.
    */
-  auto GetLocalDepth(int dir_index) const -> int{
-	return dir_[dir_index].depth_;
-}
+  auto GetLocalDepth(int dir_index) const -> int;
 
   /**
    * @brief Get the number of buckets in the directory.
    * @return The number of buckets in the directory.
    */
-  auto GetNumBuckets() const -> int{
+  auto GetNumBuckets() const -> int;
 	
-}
-
   /**
    *
    * TODO(P1): Add implementation
@@ -85,10 +75,7 @@ class ExtendibleHashTable : public HashTable<K, V> {
    * @param[out] value The value associated with the key.
    * @return True if the key is found, false otherwise.
    */
-  auto Find(const K &key, V &value) -> bool override{
-	uint32_t hash_value=hash_function(key);
-	int index=hash_value>>(64-global_depth_)&(1<<global_depth_);
-	dir_[index]
+  auto Find(const K &key, V &value) -> bool override;
 
   /**
    *
@@ -145,9 +132,7 @@ class ExtendibleHashTable : public HashTable<K, V> {
      * @param[out] value The value associated with the key.
      * @return True if the key is found, false otherwise.
      */
-    auto Find(const K &key, V &value) -> bool{
-	
-}
+    auto Find(const K &key, V &value) -> bool;
 
     /**
      *
@@ -157,9 +142,7 @@ class ExtendibleHashTable : public HashTable<K, V> {
      * @param key The key to be deleted.
      * @return True if the key exists, false otherwise.
      */
-    auto Remove(const K &key) -> bool{
-	
-}
+    auto Remove(const K &key) -> bool;
 
     /**
      *
@@ -172,18 +155,14 @@ class ExtendibleHashTable : public HashTable<K, V> {
      * @param value The value to be inserted.
      * @return True if the key-value pair is inserted, false otherwise.
      */
-    auto Insert(const K &key, const V &value) -> bool{
-	if(size_==global_depth) return false;
-	std::list<std::pair<K,V>>::iterator as=find();
-	return true;			
-	}
+    auto Insert(const K &key, const V &value) -> bool;
 
    private:
     // TODO(student): You may add additional private members and helper functions
     size_t size_;
     int depth_;
     std::list<std::pair<K, V>> list_;
-  };
+  };//Bucket
 
  private:
   // TODO(student): You may add additional private members and helper functions and remove the ones
@@ -217,6 +196,6 @@ class ExtendibleHashTable : public HashTable<K, V> {
   auto GetGlobalDepthInternal() const -> int;
   auto GetLocalDepthInternal(int dir_index) const -> int;
   auto GetNumBucketsInternal() const -> int;
-};
+};//ExtendileHashTable
 
 }  // namespace bustub
