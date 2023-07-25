@@ -3,7 +3,7 @@
 //                         CMU-DB Project (15-445/645)
 //                         ***DO NO SHARE PUBLICLY***
 //
-// Identification: src/include/page/header_page.h
+// Identification: src/include//storage/page/header_page.h
 //
 // Copyright (c) 2018, Carnegie Mellon University Database Group
 //
