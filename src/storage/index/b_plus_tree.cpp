@@ -21,7 +21,7 @@ BPLUSTREE_TYPE::BPlusTree(std::string name, BufferPoolManager *buffer_pool_manag
  * Helper function to decide whether current b+tree is empty
  */
 INDEX_TEMPLATE_ARGUMENTS
-auto BPLUSTREE_TYPE::IsEmpty() const -> bool { return root_page_id_==INVALID_PAGE_ID; }
+auto BPLUSTREE_TYPE::IsEmpty() const -> bool { return root_page_id_ == INVALID_PAGE_ID; }
 /*****************************************************************************
  * SEARCH
  *****************************************************************************/
@@ -32,49 +32,49 @@ auto BPLUSTREE_TYPE::IsEmpty() const -> bool { return root_page_id_==INVALID_PAG
  */
 INDEX_TEMPLATE_ARGUMENTS
 auto BPLUSTREE_TYPE::GetValue(const KeyType &key, std::vector<ValueType> *result, Transaction *transaction) -> bool {
-	if(IsEmpty()){ return false; }
+	if(IsEmpty())	return false;
 
-	InternalPage *page_internal ; LeafPage *page_leaf;
-	page_id_t curr_id;
-	Page *page=buffer_pool_manager_->FetchPgImp(root_page_id_);
+	InternalPage *internal; LeafPage *leaf;
+	page_id_t cur_id;
+	Page *page = buffer_pool_manager_->FetchPgImp( root_page_id_ );
 
 	IndexPageType page_type;
-	memcpy(page_type,page->GetData(),sizeof(IndexPageType));
+	memcpy(page_type, page->GetData(), sizeof(IndexPageType));
 	int l,r,mid;//the key of array_[0] is invalid
-	while(page_type==INTERNAL_PAGE){
-		page_internal=reinterpret_cast<InternalPage*>(page->GetData());
-		l=1; r=page_internal->GetSize(); mid=0;
-		while(l<=r){
-			mid=l+(r+1-l)/2;//the root of (l+r)/2
-			if(comparator(key , page_interna->KeyAt(mid))<0){
-				r=mid-1;
-			}else if(comparator(page_internal->KeyAt(mid) , key)<0){
-				l=mid+1;
+	while( page_type == INTERNAL_PAGE ){
+		page_internal = reinterpret_cast< InternalPage* >( page->GetData() );
+		l = 1; r = page_internal->GetSize(); mid = 0;
+		while(l <= r){
+			mid = l + ( r + 1 - l ) / 2;//the root of (l+r)/2
+			if(comparator(key , page_interna->KeyAt(mid)) < 0){
+				r = mid - 1;
+			}else if(comparator(page_internal->KeyAt(mid) , key) < 0){
+				l = mid + 1;
 			}else{
-				r=mid;
+				r = mid;
 				break;
 			}
 		}//r
-  		curr_id=page->GetPageId();
-		buffer_pool_manager_->UnpinPgImp(curr_id,false);
-		page=bufffer_pool_manager_->FetchPgImp(page_internal->ValueAt(r));
-		memcpy(page_type,page->GetData(),sizeof(IndexPageType));
+  		curr_id = page->GetPageId();
+		buffer_pool_manager_->UnpinPgImp( curr_id, false );
+		page = bufffer_pool_manager_->FetchPgImp( page_internal->ValueAt( r ) );
+		memcpy(page_type, page->GetData(), sizeof( IndexPageType ));
 	}	
-	curr_id=page->GetPageId();
-	page_leaf=reinterpret_cast<LeafPage*>(page->GetData());
-	l=0; l=page_leaf->GetSize()-1; mid=0;
-	while(l<=r){
-		mid=l+(r+1-l)/2;
-		if(comparator( key , page_leaf->KeyAt(mid) )<0){
-			r=mid-1;
-		}else if(comparator( page_leaf->KeyAt(mid) , key )<0){
-			l=mid+1;
+	curr_id = page->GetPageId();
+	page_leaf = reinterpret_cast< LeafPage* >( page->GetData() );
+	l = 0; l = page_leaf->GetSize() - 1; mid = 0;
+	while( l <= r){
+		mid = l + ( r + 1 - l ) / 2;
+		if(comparator( key , page_leaf->KeyAt(mid) ) < 0){
+			r = mid - 1;
+		}else if(comparator( page_leaf->KeyAt(mid) , key ) < 0){
+			l = mid + 1;
 		}else{
 			break;
 		}
 	}
-	if(l>r){ return false; }
-	(*result).emplace_back(page_leaf->ValueAt(mid));
+	if(l > r){ return false; }
+	(*result).emplace_back(page_leaf->ValueAt( mid ));
 	buffer_pool_manager_->UnpinPgImp(curr_id , false);
 	return true;
 }
