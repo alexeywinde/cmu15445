@@ -1,0 +1,2319 @@
+Start testing: Mar 31 11:37 CST
+----------------------------------------------------------
+1/112 Testing: BinderTest.BindSelectValue
+1/112 Test: BinderTest.BindSelectValue
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectValue" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectValue" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectValue
+BoundSelect {
+  table=<empty>,
+  columns=[1],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectValue (0 ms)
+[----------] 1 test from BinderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectValue" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/112 Testing: BinderTest.BindSelectFrom
+2/112 Test: BinderTest.BindSelectFrom
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectFrom" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectFrom" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectFrom
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectFrom
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.x],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectFrom (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectFrom" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectFrom" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/112 Testing: BinderTest.BindSelectFromWhere
+3/112 Test: BinderTest.BindSelectFromWhere
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectFromWhere" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectFromWhere" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectFromWhere
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectFromWhere
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.x],
+  groupBy=[],
+  having=,
+  where=(y.z=1),
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectFromWhere (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectFromWhere" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectFromWhere" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/112 Testing: BinderTest.BindSelectFromStar
+4/112 Test: BinderTest.BindSelectFromStar
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectFromStar" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectFromStar" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectFromStar
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectFromStar
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.x, y.z, y.a, y.b, y.c],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectFromStar (0 ms)
+[----------] 1 test from BinderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectFromStar" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectFromStar" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/112 Testing: BinderTest.BindSelectFromMultipleCol
+5/112 Test: BinderTest.BindSelectFromMultipleCol
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectFromMultipleCol" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectFromMultipleCol" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectFromMultipleCol
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectFromMultipleCol
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.a, y.b, y.c],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectFromMultipleCol (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectFromMultipleCol" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectFromMultipleCol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/112 Testing: BinderTest.BindSelectExpr
+6/112 Test: BinderTest.BindSelectExpr
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectExpr" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectExpr" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectExpr
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectExpr
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[max([y.a]), min([y.b]), first([y.c])],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectExpr (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectExpr" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectExpr" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/112 Testing: BinderTest.BindAgg
+7/112 Test: BinderTest.BindAgg
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindAgg" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindAgg" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindAgg
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindAgg
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.z, max([y.a]), min([y.b]), first([y.c])],
+  groupBy=[y.z],
+  having=(max([y.a])>0),
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindAgg (4 ms)
+[----------] 1 test from BinderTest (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (5 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindAgg" end time: Mar 31 11:37 CST
+"BinderTest.BindAgg" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/112 Testing: BinderTest.BindCrossJoin
+8/112 Test: BinderTest.BindCrossJoin
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindCrossJoin" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindCrossJoin" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindCrossJoin
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindCrossJoin
+BoundSelect {
+  table=BoundCrossProductRef { left=BoundBaseTableRef { table=a, oid=1 }, right=BoundBaseTableRef { table=b, oid=2 } },
+  columns=[a.x, a.y, b.x, b.y],
+  groupBy=[],
+  having=,
+  where=(a.x=b.y),
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindCrossJoin (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindCrossJoin" end time: Mar 31 11:37 CST
+"BinderTest.BindCrossJoin" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/112 Testing: BinderTest.BindCrossThreeWayJoin
+9/112 Test: BinderTest.BindCrossThreeWayJoin
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindCrossThreeWayJoin" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindCrossThreeWayJoin" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindCrossThreeWayJoin
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindCrossThreeWayJoin
+BoundSelect {
+  table=BoundCrossProductRef { left=BoundCrossProductRef { left=BoundBaseTableRef { table=a, oid=1 }, right=BoundBaseTableRef { table=b, oid=2 } }, right=BoundBaseTableRef { table=y, oid=0 } },
+  columns=[a.x, a.y, b.x, b.y, y.x, y.z, y.a, y.b, y.c],
+  groupBy=[],
+  having=,
+  where=((a.x=b.y)and(a.x=y.x)),
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindCrossThreeWayJoin (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindCrossThreeWayJoin" end time: Mar 31 11:37 CST
+"BinderTest.BindCrossThreeWayJoin" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/112 Testing: BinderTest.BindJoin
+10/112 Test: BinderTest.BindJoin
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindJoin" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindJoin" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindJoin
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindJoin
+BoundSelect {
+  table=BoundJoin { type=Inner, left=BoundBaseTableRef { table=a, oid=1 }, right=BoundBaseTableRef { table=b, oid=2 }, condition=(a.x=b.y) },
+  columns=[a.x, a.y, b.x, b.y],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindJoin (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindJoin" end time: Mar 31 11:37 CST
+"BinderTest.BindJoin" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/112 Testing: BinderTest.BindThreeWayJoin
+11/112 Test: BinderTest.BindThreeWayJoin
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindThreeWayJoin" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindThreeWayJoin" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindThreeWayJoin
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindThreeWayJoin
+BoundSelect {
+  table=BoundJoin { type=Inner, left=BoundJoin { type=Inner, left=BoundBaseTableRef { table=a, oid=1 }, right=BoundBaseTableRef { table=b, oid=2 }, condition=(a.x=b.y) }, right=BoundBaseTableRef { table=y, oid=0 }, condition=(a.x=y.x) },
+  columns=[a.x, a.y, b.x, b.y, y.x, y.z, y.a, y.b, y.c],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindThreeWayJoin (3 ms)
+[----------] 1 test from BinderTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindThreeWayJoin" end time: Mar 31 11:37 CST
+"BinderTest.BindThreeWayJoin" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/112 Testing: BinderTest.BindSelectStar
+12/112 Test: BinderTest.BindSelectStar
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectStar" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectStar" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectStar
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectStar
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.x, y.z, y.a, y.b, y.c],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectStar (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectStar" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectStar" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/112 Testing: BinderTest.BindCountStar
+13/112 Test: BinderTest.BindCountStar
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindCountStar" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindCountStar" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindCountStar
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindCountStar
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[count_star([])],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindCountStar (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindCountStar" end time: Mar 31 11:37 CST
+"BinderTest.BindCountStar" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/112 Testing: BinderTest.BindSelectTableColumn
+14/112 Test: BinderTest.BindSelectTableColumn
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindSelectTableColumn" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindSelectTableColumn" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindSelectTableColumn
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindSelectTableColumn
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.x],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindSelectTableColumn (1 ms)
+[----------] 1 test from BinderTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindSelectTableColumn" end time: Mar 31 11:37 CST
+"BinderTest.BindSelectTableColumn" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/112 Testing: BinderTest.FailBindUnknownColumn
+15/112 Test: BinderTest.FailBindUnknownColumn
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.FailBindUnknownColumn" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.FailBindUnknownColumn" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.FailBindUnknownColumn
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.FailBindUnknownColumn
+Message :: column zzzz not found
+Message :: column y.zzzz not found
+Message :: column x.zzzz not found
+Message :: unsupported TableReferenceType
+[       OK ] BinderTest.FailBindUnknownColumn (2 ms)
+[----------] 1 test from BinderTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.FailBindUnknownColumn" end time: Mar 31 11:37 CST
+"BinderTest.FailBindUnknownColumn" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/112 Testing: BinderTest.BindCreateTable
+16/112 Test: BinderTest.BindCreateTable
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindCreateTable" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindCreateTable" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindCreateTable
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindCreateTable
+[       OK ] BinderTest.BindCreateTable (0 ms)
+[----------] 1 test from BinderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindCreateTable" end time: Mar 31 11:37 CST
+"BinderTest.BindCreateTable" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/112 Testing: BinderTest.BindInsert
+17/112 Test: BinderTest.BindInsert
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindInsert" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindInsert" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindInsert
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindInsert
+[       OK ] BinderTest.BindInsert (2 ms)
+[----------] 1 test from BinderTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindInsert" end time: Mar 31 11:37 CST
+"BinderTest.BindInsert" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/112 Testing: BinderTest.BindInsertSelect
+18/112 Test: BinderTest.BindInsertSelect
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindInsertSelect" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindInsertSelect" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindInsertSelect
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindInsertSelect
+[       OK ] BinderTest.BindInsertSelect (0 ms)
+[----------] 1 test from BinderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindInsertSelect" end time: Mar 31 11:37 CST
+"BinderTest.BindInsertSelect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/112 Testing: BinderTest.BindVarchar
+19/112 Test: BinderTest.BindVarchar
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindVarchar" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindVarchar" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindVarchar
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindVarchar
+[       OK ] BinderTest.BindVarchar (2 ms)
+[----------] 1 test from BinderTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindVarchar" end time: Mar 31 11:37 CST
+"BinderTest.BindVarchar" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/112 Testing: BinderTest.BindAliasInAgg
+20/112 Test: BinderTest.BindAliasInAgg
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindAliasInAgg" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindAliasInAgg" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindAliasInAgg
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindAliasInAgg
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[y.z, (max([y.a]) as max_a), min([y.b]), first([y.c])],
+  groupBy=[y.z],
+  having=(max([y.a])>0),
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindAliasInAgg (2 ms)
+[----------] 1 test from BinderTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindAliasInAgg" end time: Mar 31 11:37 CST
+"BinderTest.BindAliasInAgg" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/112 Testing: BinderTest.BindAlias
+21/112 Test: BinderTest.BindAlias
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindAlias" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindAlias" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindAlias
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindAlias
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[(y.a as a2)],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindAlias (0 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindAlias" end time: Mar 31 11:37 CST
+"BinderTest.BindAlias" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/112 Testing: BinderTest.BindUnaryOp
+22/112 Test: BinderTest.BindUnaryOp
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindUnaryOp" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindUnaryOp" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindUnaryOp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindUnaryOp
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[(-y.x)],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindUnaryOp (0 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindUnaryOp" end time: Mar 31 11:37 CST
+"BinderTest.BindUnaryOp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/112 Testing: BinderTest.BindBinaryOp
+23/112 Test: BinderTest.BindBinaryOp
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/binder_test" "--gtest_filter=BinderTest.BindBinaryOp" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/binder_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindBinaryOp" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = BinderTest.BindBinaryOp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BinderTest
+[ RUN      ] BinderTest.BindBinaryOp
+BoundSelect {
+  table=BoundBaseTableRef { table=y, oid=0 },
+  columns=[(y.x+y.z), (y.z+y.x), (y.x*y.z), (y.x/y.z)],
+  groupBy=[],
+  having=,
+  where=,
+  limit=,
+  offset=,
+  order_by=[],
+  is_distinct=false,
+  ctes=,
+}
+[       OK ] BinderTest.BindBinaryOp (1 ms)
+[----------] 1 test from BinderTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindBinaryOp" end time: Mar 31 11:37 CST
+"BinderTest.BindBinaryOp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/112 Testing: BinderTest.BindUncorrelatedSubquery
+24/112 Test: BinderTest.BindUncorrelatedSubquery
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindUncorrelatedSubquery" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindUncorrelatedSubquery" end time: Mar 31 11:37 CST
+"BinderTest.BindUncorrelatedSubquery" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/112 Testing: BinderTest.BindUpdate
+25/112 Test: BinderTest.BindUpdate
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindUpdate" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindUpdate" end time: Mar 31 11:37 CST
+"BinderTest.BindUpdate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/112 Testing: BinderTest.BindDelete
+26/112 Test: BinderTest.BindDelete
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BinderTest.BindDelete" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinderTest.BindDelete" end time: Mar 31 11:37 CST
+"BinderTest.BindDelete" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/112 Testing: BufferPoolManagerInstanceTest.BinaryDataTest
+27/112 Test: BufferPoolManagerInstanceTest.BinaryDataTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BufferPoolManagerInstanceTest.BinaryDataTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BufferPoolManagerInstanceTest.BinaryDataTest" end time: Mar 31 11:37 CST
+"BufferPoolManagerInstanceTest.BinaryDataTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/112 Testing: BufferPoolManagerInstanceTest.SampleTest
+28/112 Test: BufferPoolManagerInstanceTest.SampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BufferPoolManagerInstanceTest.SampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BufferPoolManagerInstanceTest.SampleTest" end time: Mar 31 11:37 CST
+"BufferPoolManagerInstanceTest.SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/112 Testing: ClockReplacerTest.SampleTest
+29/112 Test: ClockReplacerTest.SampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"ClockReplacerTest.SampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ClockReplacerTest.SampleTest" end time: Mar 31 11:37 CST
+"ClockReplacerTest.SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/112 Testing: LRUKReplacerTest.SampleTest
+30/112 Test: LRUKReplacerTest.SampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LRUKReplacerTest.SampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LRUKReplacerTest.SampleTest" end time: Mar 31 11:37 CST
+"LRUKReplacerTest.SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/112 Testing: LRUReplacerTest.SampleTest
+31/112 Test: LRUReplacerTest.SampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LRUReplacerTest.SampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LRUReplacerTest.SampleTest" end time: Mar 31 11:37 CST
+"LRUReplacerTest.SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/112 Testing: CatalogTest.CreateTable1
+32/112 Test: CatalogTest.CreateTable1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateTable1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateTable1" end time: Mar 31 11:37 CST
+"CatalogTest.CreateTable1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/112 Testing: CatalogTest.CreateTable2
+33/112 Test: CatalogTest.CreateTable2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateTable2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateTable2" end time: Mar 31 11:37 CST
+"CatalogTest.CreateTable2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/112 Testing: CatalogTest.CreateTable3
+34/112 Test: CatalogTest.CreateTable3
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateTable3" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateTable3" end time: Mar 31 11:37 CST
+"CatalogTest.CreateTable3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/112 Testing: CatalogTest.CreateTableTest
+35/112 Test: CatalogTest.CreateTableTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateTableTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateTableTest" end time: Mar 31 11:37 CST
+"CatalogTest.CreateTableTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/112 Testing: CatalogTest.CreateIndex1
+36/112 Test: CatalogTest.CreateIndex1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateIndex1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateIndex1" end time: Mar 31 11:37 CST
+"CatalogTest.CreateIndex1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/112 Testing: CatalogTest.CreateIndex2
+37/112 Test: CatalogTest.CreateIndex2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateIndex2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateIndex2" end time: Mar 31 11:37 CST
+"CatalogTest.CreateIndex2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/112 Testing: CatalogTest.CreateIndex3
+38/112 Test: CatalogTest.CreateIndex3
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.CreateIndex3" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.CreateIndex3" end time: Mar 31 11:37 CST
+"CatalogTest.CreateIndex3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/112 Testing: CatalogTest.QueryIndex1
+39/112 Test: CatalogTest.QueryIndex1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.QueryIndex1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.QueryIndex1" end time: Mar 31 11:37 CST
+"CatalogTest.QueryIndex1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/112 Testing: CatalogTest.QueryIndex2
+40/112 Test: CatalogTest.QueryIndex2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.QueryIndex2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.QueryIndex2" end time: Mar 31 11:37 CST
+"CatalogTest.QueryIndex2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/112 Testing: CatalogTest.FailedQuery1
+41/112 Test: CatalogTest.FailedQuery1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.FailedQuery1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.FailedQuery1" end time: Mar 31 11:37 CST
+"CatalogTest.FailedQuery1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/112 Testing: CatalogTest.FailedQuery2
+42/112 Test: CatalogTest.FailedQuery2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.FailedQuery2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.FailedQuery2" end time: Mar 31 11:37 CST
+"CatalogTest.FailedQuery2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/112 Testing: CatalogTest.FailedQuery3
+43/112 Test: CatalogTest.FailedQuery3
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.FailedQuery3" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.FailedQuery3" end time: Mar 31 11:37 CST
+"CatalogTest.FailedQuery3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/112 Testing: CatalogTest.FailedQuery4
+44/112 Test: CatalogTest.FailedQuery4
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.FailedQuery4" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.FailedQuery4" end time: Mar 31 11:37 CST
+"CatalogTest.FailedQuery4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/112 Testing: CatalogTest.FailedQuery5
+45/112 Test: CatalogTest.FailedQuery5
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.FailedQuery5" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.FailedQuery5" end time: Mar 31 11:37 CST
+"CatalogTest.FailedQuery5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/112 Testing: CatalogTest.IndexInteraction0
+46/112 Test: CatalogTest.IndexInteraction0
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.IndexInteraction0" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.IndexInteraction0" end time: Mar 31 11:37 CST
+"CatalogTest.IndexInteraction0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/112 Testing: CatalogTest.IndexInteraction1
+47/112 Test: CatalogTest.IndexInteraction1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.IndexInteraction1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.IndexInteraction1" end time: Mar 31 11:37 CST
+"CatalogTest.IndexInteraction1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/112 Testing: CatalogTest.IndexInteraction2
+48/112 Test: CatalogTest.IndexInteraction2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.IndexInteraction2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.IndexInteraction2" end time: Mar 31 11:37 CST
+"CatalogTest.IndexInteraction2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/112 Testing: CatalogTest.IndexInteraction3
+49/112 Test: CatalogTest.IndexInteraction3
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"CatalogTest.IndexInteraction3" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CatalogTest.IndexInteraction3" end time: Mar 31 11:37 CST
+"CatalogTest.IndexInteraction3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/112 Testing: RWLatchTest.BasicTest
+50/112 Test: RWLatchTest.BasicTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/rwlatch_test" "--gtest_filter=RWLatchTest.BasicTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/rwlatch_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"RWLatchTest.BasicTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = RWLatchTest.BasicTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RWLatchTest
+[ RUN      ] RWLatchTest.BasicTest
+[       OK ] RWLatchTest.BasicTest (41 ms)
+[----------] 1 test from RWLatchTest (41 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (41 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"RWLatchTest.BasicTest" end time: Mar 31 11:37 CST
+"RWLatchTest.BasicTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/112 Testing: LockManagerDeadlockDetectionTest.EdgeTest
+51/112 Test: LockManagerDeadlockDetectionTest.EdgeTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LockManagerDeadlockDetectionTest.EdgeTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LockManagerDeadlockDetectionTest.EdgeTest" end time: Mar 31 11:37 CST
+"LockManagerDeadlockDetectionTest.EdgeTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/112 Testing: LockManagerDeadlockDetectionTest.BasicDeadlockDetectionTest
+52/112 Test: LockManagerDeadlockDetectionTest.BasicDeadlockDetectionTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LockManagerDeadlockDetectionTest.BasicDeadlockDetectionTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LockManagerDeadlockDetectionTest.BasicDeadlockDetectionTest" end time: Mar 31 11:37 CST
+"LockManagerDeadlockDetectionTest.BasicDeadlockDetectionTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/112 Testing: LockManagerTest.TableLockTest1
+53/112 Test: LockManagerTest.TableLockTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LockManagerTest.TableLockTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LockManagerTest.TableLockTest1" end time: Mar 31 11:37 CST
+"LockManagerTest.TableLockTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/112 Testing: LockManagerTest.TableLockUpgradeTest1
+54/112 Test: LockManagerTest.TableLockUpgradeTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LockManagerTest.TableLockUpgradeTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LockManagerTest.TableLockUpgradeTest1" end time: Mar 31 11:37 CST
+"LockManagerTest.TableLockUpgradeTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/112 Testing: LockManagerTest.RowLockTest1
+55/112 Test: LockManagerTest.RowLockTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LockManagerTest.RowLockTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LockManagerTest.RowLockTest1" end time: Mar 31 11:37 CST
+"LockManagerTest.RowLockTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/112 Testing: LockManagerTest.TwoPLTest1
+56/112 Test: LockManagerTest.TwoPLTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"LockManagerTest.TwoPLTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LockManagerTest.TwoPLTest1" end time: Mar 31 11:37 CST
+"LockManagerTest.TwoPLTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/112 Testing: TransactionTest.SimpleInsertRollbackTest
+57/112 Test: TransactionTest.SimpleInsertRollbackTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TransactionTest.SimpleInsertRollbackTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TransactionTest.SimpleInsertRollbackTest" end time: Mar 31 11:37 CST
+"TransactionTest.SimpleInsertRollbackTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/112 Testing: TransactionTest.DirtyReadsTest
+58/112 Test: TransactionTest.DirtyReadsTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TransactionTest.DirtyReadsTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TransactionTest.DirtyReadsTest" end time: Mar 31 11:37 CST
+"TransactionTest.DirtyReadsTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/112 Testing: HashTablePageTest.DirectoryPageSampleTest
+59/112 Test: HashTablePageTest.DirectoryPageSampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"HashTablePageTest.DirectoryPageSampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HashTablePageTest.DirectoryPageSampleTest" end time: Mar 31 11:37 CST
+"HashTablePageTest.DirectoryPageSampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/112 Testing: HashTablePageTest.BucketPageSampleTest
+60/112 Test: HashTablePageTest.BucketPageSampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"HashTablePageTest.BucketPageSampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HashTablePageTest.BucketPageSampleTest" end time: Mar 31 11:37 CST
+"HashTablePageTest.BucketPageSampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/112 Testing: HashTableTest.SampleTest
+61/112 Test: HashTableTest.SampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"HashTableTest.SampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HashTableTest.SampleTest" end time: Mar 31 11:37 CST
+"HashTableTest.SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/112 Testing: ExtendibleHashTableTest.SampleTest
+62/112 Test: ExtendibleHashTableTest.SampleTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"ExtendibleHashTableTest.SampleTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ExtendibleHashTableTest.SampleTest" end time: Mar 31 11:37 CST
+"ExtendibleHashTableTest.SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/112 Testing: ExtendibleHashTableTest.ConcurrentInsertTest
+63/112 Test: ExtendibleHashTableTest.ConcurrentInsertTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"ExtendibleHashTableTest.ConcurrentInsertTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ExtendibleHashTableTest.ConcurrentInsertTest" end time: Mar 31 11:37 CST
+"ExtendibleHashTableTest.ConcurrentInsertTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/112 Testing: StarterTest.TrieNodeInsertTest
+64/112 Test: StarterTest.TrieNodeInsertTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"StarterTest.TrieNodeInsertTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StarterTest.TrieNodeInsertTest" end time: Mar 31 11:37 CST
+"StarterTest.TrieNodeInsertTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/112 Testing: StarterTest.TrieNodeRemoveTest
+65/112 Test: StarterTest.TrieNodeRemoveTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"StarterTest.TrieNodeRemoveTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StarterTest.TrieNodeRemoveTest" end time: Mar 31 11:37 CST
+"StarterTest.TrieNodeRemoveTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/112 Testing: StarterTest.TrieInsertTest
+66/112 Test: StarterTest.TrieInsertTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"StarterTest.TrieInsertTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StarterTest.TrieInsertTest" end time: Mar 31 11:37 CST
+"StarterTest.TrieInsertTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/112 Testing: StarterTrieTest.RemoveTest
+67/112 Test: StarterTrieTest.RemoveTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"StarterTrieTest.RemoveTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StarterTrieTest.RemoveTest" end time: Mar 31 11:37 CST
+"StarterTrieTest.RemoveTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/112 Testing: StarterTrieTest.ConcurrentTest1
+68/112 Test: StarterTrieTest.ConcurrentTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"StarterTrieTest.ConcurrentTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StarterTrieTest.ConcurrentTest1" end time: Mar 31 11:37 CST
+"StarterTrieTest.ConcurrentTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/112 Testing: RecoveryTest.RedoTest
+69/112 Test: RecoveryTest.RedoTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"RecoveryTest.RedoTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RecoveryTest.RedoTest" end time: Mar 31 11:37 CST
+"RecoveryTest.RedoTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/112 Testing: RecoveryTest.UndoTest
+70/112 Test: RecoveryTest.UndoTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"RecoveryTest.UndoTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RecoveryTest.UndoTest" end time: Mar 31 11:37 CST
+"RecoveryTest.UndoTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/112 Testing: RecoveryTest.CheckpointTest
+71/112 Test: RecoveryTest.CheckpointTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"RecoveryTest.CheckpointTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RecoveryTest.CheckpointTest" end time: Mar 31 11:37 CST
+"RecoveryTest.CheckpointTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/112 Testing: BPlusTreeConcurrentTest.InsertTest1
+72/112 Test: BPlusTreeConcurrentTest.InsertTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeConcurrentTest.InsertTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeConcurrentTest.InsertTest1" end time: Mar 31 11:37 CST
+"BPlusTreeConcurrentTest.InsertTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/112 Testing: BPlusTreeConcurrentTest.InsertTest2
+73/112 Test: BPlusTreeConcurrentTest.InsertTest2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeConcurrentTest.InsertTest2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeConcurrentTest.InsertTest2" end time: Mar 31 11:37 CST
+"BPlusTreeConcurrentTest.InsertTest2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/112 Testing: BPlusTreeConcurrentTest.DeleteTest1
+74/112 Test: BPlusTreeConcurrentTest.DeleteTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeConcurrentTest.DeleteTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeConcurrentTest.DeleteTest1" end time: Mar 31 11:37 CST
+"BPlusTreeConcurrentTest.DeleteTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/112 Testing: BPlusTreeConcurrentTest.DeleteTest2
+75/112 Test: BPlusTreeConcurrentTest.DeleteTest2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeConcurrentTest.DeleteTest2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeConcurrentTest.DeleteTest2" end time: Mar 31 11:37 CST
+"BPlusTreeConcurrentTest.DeleteTest2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/112 Testing: BPlusTreeConcurrentTest.MixTest
+76/112 Test: BPlusTreeConcurrentTest.MixTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeConcurrentTest.MixTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeConcurrentTest.MixTest" end time: Mar 31 11:37 CST
+"BPlusTreeConcurrentTest.MixTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/112 Testing: BPlusTreeTest.BPlusTreeContentionBenchmark
+77/112 Test: BPlusTreeTest.BPlusTreeContentionBenchmark
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTest.BPlusTreeContentionBenchmark" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTest.BPlusTreeContentionBenchmark" end time: Mar 31 11:37 CST
+"BPlusTreeTest.BPlusTreeContentionBenchmark" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/112 Testing: BPlusTreeTest.BPlusTreeContentionBenchmark2
+78/112 Test: BPlusTreeTest.BPlusTreeContentionBenchmark2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTest.BPlusTreeContentionBenchmark2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTest.BPlusTreeContentionBenchmark2" end time: Mar 31 11:37 CST
+"BPlusTreeTest.BPlusTreeContentionBenchmark2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/112 Testing: BPlusTreeTests.DeleteTest1
+79/112 Test: BPlusTreeTests.DeleteTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTests.DeleteTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTests.DeleteTest1" end time: Mar 31 11:37 CST
+"BPlusTreeTests.DeleteTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/112 Testing: BPlusTreeTests.DeleteTest2
+80/112 Test: BPlusTreeTests.DeleteTest2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTests.DeleteTest2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTests.DeleteTest2" end time: Mar 31 11:37 CST
+"BPlusTreeTests.DeleteTest2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/112 Testing: BPlusTreeTests.InsertTest1
+81/112 Test: BPlusTreeTests.InsertTest1
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTests.InsertTest1" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTests.InsertTest1" end time: Mar 31 11:37 CST
+"BPlusTreeTests.InsertTest1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+82/112 Testing: BPlusTreeTests.InsertTest2
+82/112 Test: BPlusTreeTests.InsertTest2
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTests.InsertTest2" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTests.InsertTest2" end time: Mar 31 11:37 CST
+"BPlusTreeTests.InsertTest2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+83/112 Testing: BPlusTreeTests.InsertTest3
+83/112 Test: BPlusTreeTests.InsertTest3
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"BPlusTreeTests.InsertTest3" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BPlusTreeTests.InsertTest3" end time: Mar 31 11:37 CST
+"BPlusTreeTests.InsertTest3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+84/112 Testing: DiskManagerTest.ReadWritePageTest
+84/112 Test: DiskManagerTest.ReadWritePageTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/disk_manager_test" "--gtest_filter=DiskManagerTest.ReadWritePageTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/disk_manager_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"DiskManagerTest.ReadWritePageTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = DiskManagerTest.ReadWritePageTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DiskManagerTest
+[ RUN      ] DiskManagerTest.ReadWritePageTest
+2023-03-31 11:37:30 [home/yangwende/cmu15445/cmu15445/src/storage/disk/disk_manager.cpp:117:ReadPage] DEBUG - Read less than a page
+[       OK ] DiskManagerTest.ReadWritePageTest (0 ms)
+[----------] 1 test from DiskManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"DiskManagerTest.ReadWritePageTest" end time: Mar 31 11:37 CST
+"DiskManagerTest.ReadWritePageTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+85/112 Testing: DiskManagerTest.ReadWriteLogTest
+85/112 Test: DiskManagerTest.ReadWriteLogTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/disk_manager_test" "--gtest_filter=DiskManagerTest.ReadWriteLogTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/disk_manager_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"DiskManagerTest.ReadWriteLogTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = DiskManagerTest.ReadWriteLogTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DiskManagerTest
+[ RUN      ] DiskManagerTest.ReadWriteLogTest
+[       OK ] DiskManagerTest.ReadWriteLogTest (0 ms)
+[----------] 1 test from DiskManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"DiskManagerTest.ReadWriteLogTest" end time: Mar 31 11:37 CST
+"DiskManagerTest.ReadWriteLogTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+86/112 Testing: DiskManagerTest.ThrowBadFileTest
+86/112 Test: DiskManagerTest.ThrowBadFileTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/disk_manager_test" "--gtest_filter=DiskManagerTest.ThrowBadFileTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/disk_manager_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"DiskManagerTest.ThrowBadFileTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = DiskManagerTest.ThrowBadFileTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DiskManagerTest
+[ RUN      ] DiskManagerTest.ThrowBadFileTest
+Message :: can't open dblog file
+[       OK ] DiskManagerTest.ThrowBadFileTest (0 ms)
+[----------] 1 test from DiskManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"DiskManagerTest.ThrowBadFileTest" end time: Mar 31 11:37 CST
+"DiskManagerTest.ThrowBadFileTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+87/112 Testing: TmpTuplePageTest.BasicTest
+87/112 Test: TmpTuplePageTest.BasicTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TmpTuplePageTest.BasicTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TmpTuplePageTest.BasicTest" end time: Mar 31 11:37 CST
+"TmpTuplePageTest.BasicTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+88/112 Testing: TupleTest.TableHeapTest
+88/112 Test: TupleTest.TableHeapTest
+Command: ""
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TupleTest.TableHeapTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TupleTest.TableHeapTest" end time: Mar 31 11:37 CST
+"TupleTest.TableHeapTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+89/112 Testing: TypeTests.InvalidTypeTest
+89/112 Test: TypeTests.InvalidTypeTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/type_test" "--gtest_filter=TypeTests.InvalidTypeTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/type_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TypeTests.InvalidTypeTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = TypeTests.InvalidTypeTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TypeTests
+[ RUN      ] TypeTests.InvalidTypeTest
+
+Exception Type :: Unknown Type
+Message :: Unknown type.
+
+Exception Type :: Mismatch Type
+Message :: Cannot get minimal value.
+
+Exception Type :: Mismatch Type
+Message :: Cannot get max value.
+[       OK ] TypeTests.InvalidTypeTest (0 ms)
+[----------] 1 test from TypeTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"TypeTests.InvalidTypeTest" end time: Mar 31 11:37 CST
+"TypeTests.InvalidTypeTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+90/112 Testing: TypeTests.GetInstanceTest
+90/112 Test: TypeTests.GetInstanceTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/type_test" "--gtest_filter=TypeTests.GetInstanceTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/type_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TypeTests.GetInstanceTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = TypeTests.GetInstanceTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TypeTests
+[ RUN      ] TypeTests.GetInstanceTest
+[       OK ] TypeTests.GetInstanceTest (0 ms)
+[----------] 1 test from TypeTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"TypeTests.GetInstanceTest" end time: Mar 31 11:37 CST
+"TypeTests.GetInstanceTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+91/112 Testing: TypeTests.MaxValueTest
+91/112 Test: TypeTests.MaxValueTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/type_test" "--gtest_filter=TypeTests.MaxValueTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/type_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TypeTests.MaxValueTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = TypeTests.MaxValueTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TypeTests
+[ RUN      ] TypeTests.MaxValueTest
+[       OK ] TypeTests.MaxValueTest (0 ms)
+[----------] 1 test from TypeTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"TypeTests.MaxValueTest" end time: Mar 31 11:37 CST
+"TypeTests.MaxValueTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+92/112 Testing: TypeTests.MinValueTest
+92/112 Test: TypeTests.MinValueTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/type_test" "--gtest_filter=TypeTests.MinValueTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/type_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TypeTests.MinValueTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = TypeTests.MinValueTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TypeTests
+[ RUN      ] TypeTests.MinValueTest
+[       OK ] TypeTests.MinValueTest (0 ms)
+[----------] 1 test from TypeTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"TypeTests.MinValueTest" end time: Mar 31 11:37 CST
+"TypeTests.MinValueTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+93/112 Testing: TypeTests.TemplateTest
+93/112 Test: TypeTests.TemplateTest
+Command: "/home/yangwende/cmu15445/cmu15445/build/test/type_test" "--gtest_filter=TypeTests.TemplateTest" "--gtest_also_run_disabled_tests" "--gtest_color=auto" "--gtest_output=xml:/home/yangwende/cmu15445/cmu15445/build/test/type_test.xml" "--gtest_catch_exceptions=0"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"TypeTests.TemplateTest" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+Running main() from gmock_main.cc
+Note: Google Test filter = TypeTests.TemplateTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TypeTests
+[ RUN      ] TypeTests.TemplateTest
+size is 48
+key info32
+[       OK ] TypeTests.TemplateTest (0 ms)
+[----------] 1 test from TypeTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"TypeTests.TemplateTest" end time: Mar 31 11:37 CST
+"TypeTests.TemplateTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+94/112 Testing: SQLLogicTest.p3.01-seqscan
+94/112 Test: SQLLogicTest.p3.01-seqscan
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.01-seqscan.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.01-seqscan" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.01-seqscan" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.01-seqscan" time elapsed: 00:00:00
+----------------------------------------------------------
+
+95/112 Testing: SQLLogicTest.p3.02-insert
+95/112 Test: SQLLogicTest.p3.02-insert
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.02-insert.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.02-insert" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.23 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.02-insert" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.02-insert" time elapsed: 00:00:00
+----------------------------------------------------------
+
+96/112 Testing: SQLLogicTest.p3.03-delete
+96/112 Test: SQLLogicTest.p3.03-delete
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.03-delete.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.03-delete" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.23 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.03-delete" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.03-delete" time elapsed: 00:00:00
+----------------------------------------------------------
+
+97/112 Testing: SQLLogicTest.p3.04-index-scan
+97/112 Test: SQLLogicTest.p3.04-index-scan
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.04-index-scan.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.04-index-scan" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.04-index-scan" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.04-index-scan" time elapsed: 00:00:00
+----------------------------------------------------------
+
+98/112 Testing: SQLLogicTest.p3.05-empty-table
+98/112 Test: SQLLogicTest.p3.05-empty-table
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.05-empty-table.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.05-empty-table" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.05-empty-table" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.05-empty-table" time elapsed: 00:00:00
+----------------------------------------------------------
+
+99/112 Testing: SQLLogicTest.p3.06-simple-agg
+99/112 Test: SQLLogicTest.p3.06-simple-agg
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.06-simple-agg.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.06-simple-agg" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.06-simple-agg" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.06-simple-agg" time elapsed: 00:00:00
+----------------------------------------------------------
+
+100/112 Testing: SQLLogicTest.p3.07-group-agg-1
+100/112 Test: SQLLogicTest.p3.07-group-agg-1
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.07-group-agg-1.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.07-group-agg-1" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.07-group-agg-1" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.07-group-agg-1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+101/112 Testing: SQLLogicTest.p3.08-group-agg-2
+101/112 Test: SQLLogicTest.p3.08-group-agg-2
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.08-group-agg-2.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.08-group-agg-2" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.08-group-agg-2" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.08-group-agg-2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+102/112 Testing: SQLLogicTest.p3.09-simple-join
+102/112 Test: SQLLogicTest.p3.09-simple-join
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.09-simple-join.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.09-simple-join" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.09-simple-join" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.09-simple-join" time elapsed: 00:00:00
+----------------------------------------------------------
+
+103/112 Testing: SQLLogicTest.p3.10-multi-way-join
+103/112 Test: SQLLogicTest.p3.10-multi-way-join
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.10-multi-way-join.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.10-multi-way-join" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.10-multi-way-join" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.10-multi-way-join" time elapsed: 00:00:00
+----------------------------------------------------------
+
+104/112 Testing: SQLLogicTest.p3.11-repeat-execute
+104/112 Test: SQLLogicTest.p3.11-repeat-execute
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.11-repeat-execute.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.11-repeat-execute" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.11-repeat-execute" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.11-repeat-execute" time elapsed: 00:00:00
+----------------------------------------------------------
+
+105/112 Testing: SQLLogicTest.p3.12-nested-index-join
+105/112 Test: SQLLogicTest.p3.12-nested-index-join
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.12-nested-index-join.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.12-nested-index-join" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.12-nested-index-join" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.12-nested-index-join" time elapsed: 00:00:00
+----------------------------------------------------------
+
+106/112 Testing: SQLLogicTest.p3.13-sort-limit
+106/112 Test: SQLLogicTest.p3.13-sort-limit
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.13-sort-limit.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.13-sort-limit" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.13-sort-limit" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.13-sort-limit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+107/112 Testing: SQLLogicTest.p3.14-topn
+107/112 Test: SQLLogicTest.p3.14-topn
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.14-topn.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.14-topn" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.14-topn" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.14-topn" time elapsed: 00:00:00
+----------------------------------------------------------
+
+108/112 Testing: SQLLogicTest.p3.15-integration-1
+108/112 Test: SQLLogicTest.p3.15-integration-1
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.15-integration-1.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.15-integration-1" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.15-integration-1" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.15-integration-1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+109/112 Testing: SQLLogicTest.p3.16-integration-2
+109/112 Test: SQLLogicTest.p3.16-integration-2
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.16-integration-2.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.16-integration-2" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.16-integration-2" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.16-integration-2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+110/112 Testing: SQLLogicTest.p3.leaderboard-q1
+110/112 Test: SQLLogicTest.p3.leaderboard-q1
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.leaderboard-q1.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.leaderboard-q1" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.leaderboard-q1" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.leaderboard-q1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+111/112 Testing: SQLLogicTest.p3.leaderboard-q2
+111/112 Test: SQLLogicTest.p3.leaderboard-q2
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.leaderboard-q2.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.leaderboard-q2" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.leaderboard-q2" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.leaderboard-q2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+112/112 Testing: SQLLogicTest.p3.leaderboard-q3
+112/112 Test: SQLLogicTest.p3.leaderboard-q3
+Command: "/home/yangwende/cmu15445/cmu15445/build/bin/bustub-sqllogictest" "/home/yangwende/cmu15445/cmu15445/test/sql/p3.leaderboard-q3.slt" "--verbose" "-d" "--in-memory"
+Directory: /home/yangwende/cmu15445/cmu15445/build/test
+"SQLLogicTest.p3.leaderboard-q3" start time: Mar 31 11:37 CST
+Output:
+----------------------------------------------------------
+bustub-sqllogictest: /home/yangwende/cmu15445/cmu15445/src/buffer/lru_k_replacer.cpp:102: void bustub::LRUKReplacer::SetEvictable(bustub::frame_id_t, bool): Assertion `((unsigned long)frame_id>=replacer_size_) && ("The frame id is invlaid!\n")' failed.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Failed.
+"SQLLogicTest.p3.leaderboard-q3" end time: Mar 31 11:37 CST
+"SQLLogicTest.p3.leaderboard-q3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 31 11:37 CST
