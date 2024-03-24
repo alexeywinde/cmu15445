@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/binder_test.dir/binder/binder_test.cpp.o"
+  "CMakeFiles/binder_test.dir/binder/binder_test.cpp.o.d"
   "binder_test"
   "binder_test.pdb"
   "binder_test[1]_tests.cmake"

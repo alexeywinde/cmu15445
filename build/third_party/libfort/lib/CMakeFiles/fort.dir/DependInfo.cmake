@@ -1,23 +1,14 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/home/yangwende/cmu15445/cmu15445/third_party/libfort/lib/fort.c" "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/CMakeFiles/fort.dir/fort.c.o"
-  )
-set(CMAKE_C_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../src"
-  "../src/include"
-  "../test/include"
-  "../third_party"
-  "../third_party/fmt/include"
-  "../third_party/libpg_query/include"
-  "../third_party/argparse/include"
-  "../third_party/libfort/lib"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yangwende/cmu15445/third_party/libfort/lib/fort.c" "third_party/libfort/lib/CMakeFiles/fort.dir/fort.c.o" "gcc" "third_party/libfort/lib/CMakeFiles/fort.dir/fort.c.o.d"
   )
 
 # Targets to which this target links.

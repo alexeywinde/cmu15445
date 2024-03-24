@@ -1,26 +1,18 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yangwende/cmu15445/cmu15445/src/storage/index/b_plus_tree.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/index/CMakeFiles/bustub_storage_index.dir/b_plus_tree.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/index/b_plus_tree_index.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/index/CMakeFiles/bustub_storage_index.dir/b_plus_tree_index.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/index/extendible_hash_table_index.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/index/CMakeFiles/bustub_storage_index.dir/extendible_hash_table_index.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/index/index_iterator.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/index/CMakeFiles/bustub_storage_index.dir/index_iterator.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/index/linear_probe_hash_table_index.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/index/CMakeFiles/bustub_storage_index.dir/linear_probe_hash_table_index.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../src/include"
-  "../test/include"
-  "../third_party"
-  "../third_party/fmt/include"
-  "../third_party/libpg_query/include"
-  "../third_party/argparse/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yangwende/cmu15445/src/storage/index/b_plus_tree.cpp" "src/storage/index/CMakeFiles/bustub_storage_index.dir/b_plus_tree.cpp.o" "gcc" "src/storage/index/CMakeFiles/bustub_storage_index.dir/b_plus_tree.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/index/b_plus_tree_index.cpp" "src/storage/index/CMakeFiles/bustub_storage_index.dir/b_plus_tree_index.cpp.o" "gcc" "src/storage/index/CMakeFiles/bustub_storage_index.dir/b_plus_tree_index.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/index/extendible_hash_table_index.cpp" "src/storage/index/CMakeFiles/bustub_storage_index.dir/extendible_hash_table_index.cpp.o" "gcc" "src/storage/index/CMakeFiles/bustub_storage_index.dir/extendible_hash_table_index.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/index/index_iterator.cpp" "src/storage/index/CMakeFiles/bustub_storage_index.dir/index_iterator.cpp.o" "gcc" "src/storage/index/CMakeFiles/bustub_storage_index.dir/index_iterator.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/index/linear_probe_hash_table_index.cpp" "src/storage/index/CMakeFiles/bustub_storage_index.dir/linear_probe_hash_table_index.cpp.o" "gcc" "src/storage/index/CMakeFiles/bustub_storage_index.dir/linear_probe_hash_table_index.cpp.o.d"
   )
 
 # Targets to which this target links.

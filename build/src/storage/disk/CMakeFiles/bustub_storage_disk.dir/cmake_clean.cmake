@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/bustub_storage_disk.dir/disk_manager.cpp.o"
+  "CMakeFiles/bustub_storage_disk.dir/disk_manager.cpp.o.d"
   "CMakeFiles/bustub_storage_disk.dir/disk_manager_memory.cpp.o"
+  "CMakeFiles/bustub_storage_disk.dir/disk_manager_memory.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

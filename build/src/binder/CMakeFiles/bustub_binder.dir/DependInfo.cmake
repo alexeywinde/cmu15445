@@ -1,31 +1,23 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yangwende/cmu15445/cmu15445/src/binder/bind_create.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/bind_create.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/bind_insert.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/bind_insert.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/bind_select.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/bind_select.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/bind_variable.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/bind_variable.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/binder.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/binder.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/bound_statement.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/bound_statement.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/fmt_impl.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/fmt_impl.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/keyword_helper.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/keyword_helper.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/node_tag_to_string.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/node_tag_to_string.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/binder/transformer.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/binder/CMakeFiles/bustub_binder.dir/transformer.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../src/include"
-  "../test/include"
-  "../third_party"
-  "../third_party/fmt/include"
-  "../third_party/libpg_query/include"
-  "../third_party/argparse/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yangwende/cmu15445/src/binder/bind_create.cpp" "src/binder/CMakeFiles/bustub_binder.dir/bind_create.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/bind_create.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/bind_insert.cpp" "src/binder/CMakeFiles/bustub_binder.dir/bind_insert.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/bind_insert.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/bind_select.cpp" "src/binder/CMakeFiles/bustub_binder.dir/bind_select.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/bind_select.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/bind_variable.cpp" "src/binder/CMakeFiles/bustub_binder.dir/bind_variable.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/bind_variable.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/binder.cpp" "src/binder/CMakeFiles/bustub_binder.dir/binder.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/binder.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/bound_statement.cpp" "src/binder/CMakeFiles/bustub_binder.dir/bound_statement.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/bound_statement.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/fmt_impl.cpp" "src/binder/CMakeFiles/bustub_binder.dir/fmt_impl.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/fmt_impl.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/keyword_helper.cpp" "src/binder/CMakeFiles/bustub_binder.dir/keyword_helper.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/keyword_helper.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/node_tag_to_string.cpp" "src/binder/CMakeFiles/bustub_binder.dir/node_tag_to_string.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/node_tag_to_string.cpp.o.d"
+  "/home/yangwende/cmu15445/src/binder/transformer.cpp" "src/binder/CMakeFiles/bustub_binder.dir/transformer.cpp.o" "gcc" "src/binder/CMakeFiles/bustub_binder.dir/transformer.cpp.o.d"
   )
 
 # Targets to which this target links.

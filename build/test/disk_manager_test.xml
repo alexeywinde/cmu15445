@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="1" failures="0" disabled="0" errors="0" time="0" timestamp="2023-03-31T11:37:30.219" name="AllTests">
-  <testsuite name="DiskManagerTest" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0" timestamp="2023-03-31T11:37:30.219">
-    <testcase name="ThrowBadFileTest" file="/home/yangwende/cmu15445/cmu15445/test/storage/disk_manager_test.cpp" line="76" status="run" result="completed" time="0" timestamp="2023-03-31T11:37:30.219" classname="DiskManagerTest" />
-  </testsuite>
-</testsuites>

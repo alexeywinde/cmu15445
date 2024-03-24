@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/disk_manager_test.dir/storage/disk_manager_test.cpp.o"
+  "CMakeFiles/disk_manager_test.dir/storage/disk_manager_test.cpp.o.d"
   "disk_manager_test"
   "disk_manager_test.pdb"
   "disk_manager_test[1]_tests.cmake"

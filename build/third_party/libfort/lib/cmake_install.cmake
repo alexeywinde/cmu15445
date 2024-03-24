@@ -1,4 +1,4 @@
-# Install script for directory: /home/yangwende/cmu15445/cmu15445/third_party/libfort/lib
+# Install script for directory: /home/yangwende/cmu15445/third_party/libfort/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "DEBUG")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -37,25 +37,30 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/yangwende/cmu15445/cmu15445/build/lib/libfort.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/yangwende/cmu15445/build/lib/libfort.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/yangwende/cmu15445/cmu15445/third_party/libfort/lib/fort.h"
-    "/home/yangwende/cmu15445/cmu15445/third_party/libfort/lib/fort.hpp"
+    "/home/yangwende/cmu15445/third_party/libfort/lib/fort.h"
+    "/home/yangwende/cmu15445/third_party/libfort/lib/fort.hpp"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/libfort.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yangwende/cmu15445/build/third_party/libfort/lib/libfort.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort" TYPE FILE FILES
-    "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/libfort-config.cmake"
-    "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/libfort-config-version.cmake"
+    "/home/yangwende/cmu15445/build/third_party/libfort/lib/libfort-config.cmake"
+    "/home/yangwende/cmu15445/build/third_party/libfort/lib/libfort-config-version.cmake"
     )
 endif()
 
@@ -63,7 +68,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort/libfort-targets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort/libfort-targets.cmake"
-         "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/CMakeFiles/Export/lib/cmake/libfort/libfort-targets.cmake")
+         "/home/yangwende/cmu15445/build/third_party/libfort/lib/CMakeFiles/Export/lib/cmake/libfort/libfort-targets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort/libfort-targets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -72,9 +77,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort" TYPE FILE FILES "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/CMakeFiles/Export/lib/cmake/libfort/libfort-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort" TYPE FILE FILES "/home/yangwende/cmu15445/build/third_party/libfort/lib/CMakeFiles/Export/lib/cmake/libfort/libfort-targets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort" TYPE FILE FILES "/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/lib/CMakeFiles/Export/lib/cmake/libfort/libfort-targets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/libfort" TYPE FILE FILES "/home/yangwende/cmu15445/build/third_party/libfort/lib/CMakeFiles/Export/lib/cmake/libfort/libfort-targets-debug.cmake")
   endif()
 endif()
 
