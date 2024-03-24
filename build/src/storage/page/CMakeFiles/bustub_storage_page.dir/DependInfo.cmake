@@ -1,29 +1,21 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/b_plus_tree_internal_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_internal_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/b_plus_tree_leaf_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_leaf_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/b_plus_tree_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/hash_table_block_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_block_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/hash_table_bucket_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_bucket_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/hash_table_directory_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_directory_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/header_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/header_page.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/storage/page/table_page.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/storage/page/CMakeFiles/bustub_storage_page.dir/table_page.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../src/include"
-  "../test/include"
-  "../third_party"
-  "../third_party/fmt/include"
-  "../third_party/libpg_query/include"
-  "../third_party/argparse/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yangwende/cmu15445/src/storage/page/b_plus_tree_internal_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_internal_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_internal_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/b_plus_tree_leaf_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_leaf_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_leaf_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/b_plus_tree_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/b_plus_tree_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/hash_table_block_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_block_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_block_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/hash_table_bucket_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_bucket_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_bucket_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/hash_table_directory_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_directory_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/hash_table_directory_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/header_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/header_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/header_page.cpp.o.d"
+  "/home/yangwende/cmu15445/src/storage/page/table_page.cpp" "src/storage/page/CMakeFiles/bustub_storage_page.dir/table_page.cpp.o" "gcc" "src/storage/page/CMakeFiles/bustub_storage_page.dir/table_page.cpp.o.d"
   )
 
 # Targets to which this target links.

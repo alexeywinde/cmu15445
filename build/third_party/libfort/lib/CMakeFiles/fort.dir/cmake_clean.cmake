@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "../../../lib/libfort.a"
   "../../../lib/libfort.pdb"
   "CMakeFiles/fort.dir/fort.c.o"
+  "CMakeFiles/fort.dir/fort.c.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lru_k_replacer_test.dir/buffer/lru_k_replacer_test.cpp.o"
+  "CMakeFiles/lru_k_replacer_test.dir/buffer/lru_k_replacer_test.cpp.o.d"
   "lru_k_replacer_test"
   "lru_k_replacer_test.pdb"
   "lru_k_replacer_test[1]_tests.cmake"

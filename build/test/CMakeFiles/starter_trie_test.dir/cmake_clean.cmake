@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/starter_trie_test.dir/primer/starter_trie_test.cpp.o"
+  "CMakeFiles/starter_trie_test.dir/primer/starter_trie_test.cpp.o.d"
   "starter_trie_test"
   "starter_trie_test.pdb"
   "starter_trie_test[1]_tests.cmake"

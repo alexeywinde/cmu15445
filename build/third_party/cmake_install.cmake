@@ -1,4 +1,4 @@
-# Install script for directory: /home/yangwende/cmu15445/cmu15445/third_party
+# Install script for directory: /home/yangwende/cmu15445/third_party
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "DEBUG")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -37,16 +37,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/murmur3/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/libpg_query/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/googletest/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/fmt/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/linenoise/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/libfort/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/argparse/cmake_install.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/third_party/utf8proc/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/murmur3/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/libpg_query/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/googletest/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/fmt/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/linenoise/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/libfort/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/argparse/cmake_install.cmake")
+  include("/home/yangwende/cmu15445/build/third_party/utf8proc/cmake_install.cmake")
 
 endif()
 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/clock_replacer_test.dir/buffer/clock_replacer_test.cpp.o"
+  "CMakeFiles/clock_replacer_test.dir/buffer/clock_replacer_test.cpp.o.d"
   "clock_replacer_test"
   "clock_replacer_test.pdb"
   "clock_replacer_test[1]_tests.cmake"

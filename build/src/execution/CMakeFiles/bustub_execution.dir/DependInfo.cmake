@@ -1,40 +1,32 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yangwende/cmu15445/cmu15445/src/execution/aggregation_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/aggregation_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/delete_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/delete_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/executor_factory.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/executor_factory.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/filter_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/filter_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/fmt_impl.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/fmt_impl.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/hash_join_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/hash_join_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/index_scan_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/index_scan_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/insert_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/insert_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/limit_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/limit_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/mock_scan_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/mock_scan_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/nested_index_join_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/nested_index_join_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/nested_loop_join_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/nested_loop_join_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/plan_node.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/plan_node.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/projection_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/projection_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/seq_scan_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/seq_scan_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/sort_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/sort_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/topn_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/topn_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/update_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/update_executor.cpp.o"
-  "/home/yangwende/cmu15445/cmu15445/src/execution/values_executor.cpp" "/home/yangwende/cmu15445/cmu15445/build/src/execution/CMakeFiles/bustub_execution.dir/values_executor.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../src/include"
-  "../test/include"
-  "../third_party"
-  "../third_party/fmt/include"
-  "../third_party/libpg_query/include"
-  "../third_party/argparse/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yangwende/cmu15445/src/execution/aggregation_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/aggregation_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/aggregation_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/delete_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/delete_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/delete_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/executor_factory.cpp" "src/execution/CMakeFiles/bustub_execution.dir/executor_factory.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/executor_factory.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/filter_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/filter_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/filter_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/fmt_impl.cpp" "src/execution/CMakeFiles/bustub_execution.dir/fmt_impl.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/fmt_impl.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/hash_join_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/hash_join_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/hash_join_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/index_scan_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/index_scan_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/index_scan_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/insert_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/insert_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/insert_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/limit_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/limit_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/limit_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/mock_scan_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/mock_scan_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/mock_scan_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/nested_index_join_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/nested_index_join_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/nested_index_join_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/nested_loop_join_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/nested_loop_join_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/nested_loop_join_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/plan_node.cpp" "src/execution/CMakeFiles/bustub_execution.dir/plan_node.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/plan_node.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/projection_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/projection_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/projection_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/seq_scan_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/seq_scan_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/seq_scan_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/sort_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/sort_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/sort_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/topn_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/topn_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/topn_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/update_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/update_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/update_executor.cpp.o.d"
+  "/home/yangwende/cmu15445/src/execution/values_executor.cpp" "src/execution/CMakeFiles/bustub_execution.dir/values_executor.cpp.o" "gcc" "src/execution/CMakeFiles/bustub_execution.dir/values_executor.cpp.o.d"
   )
 
 # Targets to which this target links.

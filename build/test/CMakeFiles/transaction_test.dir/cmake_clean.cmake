@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/transaction_test.dir/concurrency/transaction_test.cpp.o"
+  "CMakeFiles/transaction_test.dir/concurrency/transaction_test.cpp.o.d"
   "transaction_test"
   "transaction_test.pdb"
   "transaction_test[1]_tests.cmake"

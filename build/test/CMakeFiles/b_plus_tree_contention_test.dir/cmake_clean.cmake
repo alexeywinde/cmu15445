@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/b_plus_tree_contention_test.dir/storage/b_plus_tree_contention_test.cpp.o"
+  "CMakeFiles/b_plus_tree_contention_test.dir/storage/b_plus_tree_contention_test.cpp.o.d"
   "b_plus_tree_contention_test"
   "b_plus_tree_contention_test.pdb"
   "b_plus_tree_contention_test[1]_tests.cmake"

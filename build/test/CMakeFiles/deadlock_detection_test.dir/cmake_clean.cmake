@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/deadlock_detection_test.dir/concurrency/deadlock_detection_test.cpp.o"
+  "CMakeFiles/deadlock_detection_test.dir/concurrency/deadlock_detection_test.cpp.o.d"
   "deadlock_detection_test"
   "deadlock_detection_test.pdb"
   "deadlock_detection_test[1]_tests.cmake"

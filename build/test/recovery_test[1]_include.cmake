@@ -1,5 +1,5 @@
-if(EXISTS "/home/yangwende/cmu15445/cmu15445/build/test/recovery_test[1]_tests.cmake")
-  include("/home/yangwende/cmu15445/cmu15445/build/test/recovery_test[1]_tests.cmake")
+if(EXISTS "/home/yangwende/cmu15445/build/test/recovery_test[1]_tests.cmake")
+  include("/home/yangwende/cmu15445/build/test/recovery_test[1]_tests.cmake")
 else()
   add_test(recovery_test_NOT_BUILT recovery_test_NOT_BUILT)
 endif()

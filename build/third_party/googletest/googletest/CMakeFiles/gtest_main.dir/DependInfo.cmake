@@ -1,29 +1,19 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yangwende/cmu15445/cmu15445/third_party/googletest/googletest/src/gtest_main.cc" "/home/yangwende/cmu15445/cmu15445/build/third_party/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../src/include"
-  "../test/include"
-  "../third_party"
-  "../third_party/fmt/include"
-  "../third_party/libpg_query/include"
-  "../third_party/argparse/include"
-  "../third_party/googletest/googletest/include"
-  "../third_party/googletest/googletest"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yangwende/cmu15445/third_party/googletest/googletest/src/gtest_main.cc" "third_party/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o" "gcc" "third_party/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/yangwende/cmu15445/cmu15445/build/third_party/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/yangwende/cmu15445/build/third_party/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

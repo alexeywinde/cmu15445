@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/b_plus_tree_concurrent_test.dir/storage/b_plus_tree_concurrent_test.cpp.o"
+  "CMakeFiles/b_plus_tree_concurrent_test.dir/storage/b_plus_tree_concurrent_test.cpp.o.d"
   "b_plus_tree_concurrent_test"
   "b_plus_tree_concurrent_test.pdb"
   "b_plus_tree_concurrent_test[1]_tests.cmake"
