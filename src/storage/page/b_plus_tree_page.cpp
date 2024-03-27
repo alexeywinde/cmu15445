@@ -19,9 +19,9 @@ namespace bustub {
  */
 auto BPlusTreePage::IsLeafPage() const -> bool { return page_type_ == LEAF_PAGE; }
 auto BPlusTreePage::IsRootPage() const -> bool {
-       //return page_id_ == parent_page_id_;
-       return parent_page_id_ == INVALID_PAGE_ID;
-	//return max_size_ == ;
+  // return page_id_ == parent_page_id_;
+  return parent_page_id_ == INVALID_PAGE_ID;
+  // return max_size_ == ;
 }
 void BPlusTreePage::SetPageType(IndexPageType page_type) { page_type_ = page_type; }
 
@@ -30,7 +30,7 @@ void BPlusTreePage::SetPageType(IndexPageType page_type) { page_type_ = page_typ
  * page)
  */
 auto BPlusTreePage::GetSize() const -> int { return size_; }
-void BPlusTreePage::SetSize(int size) { size_ = size;}
+void BPlusTreePage::SetSize(int size) { size_ = size; }
 void BPlusTreePage::IncreaseSize(int amount) { size_ += amount; }
 
 /*
@@ -44,16 +44,17 @@ void BPlusTreePage::SetMaxSize(int size) { max_size_ = size; }
  * Generally, min page size == max page size / 2
  */
 auto BPlusTreePage::GetMinSize() const -> int {
-	//if( page_id_ == parent_page_id_ ) return 2;
-	if(parent_page_id_ == INVALID_PAGE_ID) return 2;
-	return max_size_ / 2;}
+  // if( page_id_ == parent_page_id_ ) return 2;
+  if (parent_page_id_ == INVALID_PAGE_ID) return 2;
+  return max_size_ / 2;
+}
 }
 
 /*
  * Helper methods to get/set parent page id
  */
 auto BPlusTreePage::GetParentPageId() const -> page_id_t { return parent_page_id_; }
-void BPlusTreePage::SetParentPageId(page_id_t parent_page_id) { parent_page_id_  =  parent_page_id; }
+void BPlusTreePage::SetParentPageId(page_id_t parent_page_id) { parent_page_id_ = parent_page_id; }
 
 /*
  * Helper methods to get/set self page id

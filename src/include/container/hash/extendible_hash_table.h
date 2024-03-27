@@ -62,7 +62,7 @@ class ExtendibleHashTable : public HashTable<K, V> {
    * @return The number of buckets in the directory.
    */
   auto GetNumBuckets() const -> int;
-	
+
   /**
    *
    * TODO(P1): Add implementation
@@ -162,7 +162,7 @@ class ExtendibleHashTable : public HashTable<K, V> {
     size_t size_;
     int depth_;
     std::list<std::pair<K, V>> list_;
-  };//Bucket
+  };  // Bucket
 
  private:
   // TODO(student): You may add additional private members and helper functions and remove the ones
@@ -196,6 +196,6 @@ class ExtendibleHashTable : public HashTable<K, V> {
   auto GetGlobalDepthInternal() const -> int;
   auto GetLocalDepthInternal(int dir_index) const -> int;
   auto GetNumBucketsInternal() const -> int;
-};//ExtendileHashTable
+};  // ExtendileHashTable
 
 }  // namespace bustub

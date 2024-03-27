@@ -71,9 +71,6 @@ class BufferPoolManagerInstance : public BufferPoolManager {
    * @return nullptr if no new pages could be created, otherwise pointer to new page
    */
   auto NewPgImp(page_id_t *page_id) -> Page * override;
-  
-  
-  
 
   /**
    * TODO(P1): Add implementation

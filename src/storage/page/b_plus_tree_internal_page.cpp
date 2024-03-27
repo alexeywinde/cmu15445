@@ -26,35 +26,33 @@ namespace bustub {
  */
 INDEX_TEMPLATE_ARGUMENTS
 void B_PLUS_TREE_INTERNAL_PAGE_TYPE::Init(page_id_t page_id, page_id_t parent_id, int max_size) {
-	//page_type_=INTERNAL_PAGE;
-	SetPageType( INTERNAL_PAGE );
-	//size_=0;
-	SetSize( 0 );
-	SetMaxSize( max_size );
-	//page_id_=page_id;
-	//parent_page_id_=parent_id;
-	//max_size_=max_size;
-	SetPageId( page_id );
-	SetParentPageId( parent_id )
-	array_=new MappingType[max_size];
-
+  // page_type_=INTERNAL_PAGE;
+  SetPageType(INTERNAL_PAGE);
+  // size_=0;
+  SetSize(0);
+  SetMaxSize(max_size);
+  // page_id_=page_id;
+  // parent_page_id_=parent_id;
+  // max_size_=max_size;
+  SetPageId(page_id);
+  SetParentPageId(parent_id) array_ = new MappingType[max_size];
 }
 /*
  * Helper method to get/set the key associated with input "index"(a.k.a
  * array offset)
  */
 INDEX_TEMPLATE_ARGUMENTS
-auto B_PLUS_TREE_INTERNAL_PAGE_TYPE::KeyAt(int index) const -> KeyType {  return array_[index].first; }
+auto B_PLUS_TREE_INTERNAL_PAGE_TYPE::KeyAt(int index) const -> KeyType { return array_[index].first; }
 
 INDEX_TEMPLATE_ARGUMENTS
-void B_PLUS_TREE_INTERNAL_PAGE_TYPE::SetKeyAt(int index, const KeyType &key) {  array_[index].first = key; }
+void B_PLUS_TREE_INTERNAL_PAGE_TYPE::SetKeyAt(int index, const KeyType &key) { array_[index].first = key; }
 
 /*
  * Helper method to get the value associated with input "index"(a.k.a array
  * offset)
  */
 INDEX_TEMPLATE_ARGUMENTS
-auto B_PLUS_TREE_INTERNAL_PAGE_TYPE::ValueAt(int index) const -> ValueType {  return array_[index].second; }
+auto B_PLUS_TREE_INTERNAL_PAGE_TYPE::ValueAt(int index) const -> ValueType { return array_[index].second; }
 
 // valuetype for internalNode should be page id_t
 template class BPlusTreeInternalPage<GenericKey<4>, page_id_t, GenericComparator<4>>;

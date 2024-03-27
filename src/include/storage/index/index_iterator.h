@@ -24,10 +24,9 @@ class IndexIterator {
  public:
   // you may define your own constructor based on your member variables
   IndexIterator();
-  IndexIterator(const IndexIterator& iter);
+  IndexIterator(const IndexIterator &iter);
 
   ~IndexIterator();  // NOLINT
-
 
   auto IsEnd() -> bool;
 
@@ -41,14 +40,13 @@ class IndexIterator {
 
  private:
   // add your own private member variables here
-  //BPlusTree* b_plus_tree;
-  BufferPoolManager *buffer_pool_manager_; 
-  MappingType* KeyValue;
-  //page_id_t CurrentPageId;
+  // BPlusTree* b_plus_tree;
+  BufferPoolManager *buffer_pool_manager_;
+  MappingType *KeyValue;
+  // page_id_t CurrentPageId;
   page_id_t NextPageId;
   size_t CurrentIndex;
   size_t MaxIndex;
-
 };
 
 }  // namespace bustub
