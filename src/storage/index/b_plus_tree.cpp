@@ -89,27 +89,31 @@ auto BPLUSTREE_TYPE::GetValue(const KeyType &key, std::vector<ValueType> *result
  */
 INDEX_TEMPLATE_ARGUMENTS
 auto BPLUSTREE_TYPE::Insert(const KeyType &key, const ValueType &value, Transaction *transaction) -> bool {
-	BPlusTree bptp; InternalPage *internal; LeafPage *leaf;
+	BPlusTree *bptp; InternalPage *internal; LeafPage *leaf;
 	if (root_page_id_ == INVALID_PAGE_ID) {
-    	//Page *page_ = buffer_pool_manager_->NewPgImp(&root_Page_id_);
-		buffer_pool_manager_->NewPgImp(&root_Page_id_);
-		leaf = reinterpret_cast< LeafPag* >(buffer_pool_manager_->FetchPage(root_page_id_)->GetData());
-    	//leaf = reinterpret_cast<LeafPage *>(bptp);
-    	leaf->Init(root_page_id_, INVALID_PAGE_ID, leaf_max_size_);
+		internal = reinterpret_cast< InternalPage* >(buffer_pool_manager_->NewPgImp(&root_Page_id_)->GetData());
+    	internal->Init(root_page_id_, INVALID_PAGE_ID, internal_max_size_);
+		page_id_t leafId;
+		leaf = reinterpret_cast< LeafPage* >(buffer_pool_manager_->NewPgImp(&leafId)->GetData());
+		leaf->Init(leafId, root_Page_id_, leaf_max_size_);
     	leaf->SetNextPageId(INVALID_PAGE_ID);
-    	MappingType *array = leaf->GetArray();
-    	leaf->array[0] = std::make_pair(key, value);
+    	MappingType *ptr = reinterpret_cast<MappingType*>(internal) + 24;
+		*ptr = std::make_pair(key, leafId);
+		internal->IncreaseSize(1);
+		ptr = reinterpret_cast<MappingType*>(leaf) + 28;
+		*ptr = std::make_pair(key, value);
     	leaf->IncreaseSize(1);
-    	buffer_pool_manager_->UnpinPgImp(root_page_id_, true);
+		buffer_pool_manager_->UnpinPgImp(root_page_id_, true);
+    	buffer_pool_manager_->UnpinPgImp(leafId, true);
     	return true;
 	}
-	std::vector<int> path;
+	std::vector<std::pair<int, page_id_t>> path;
 	bptp = reinterpret_cast< BPlusTreePage* >(buffer_pool_manager_->FetchPage(root_page_id_)->GetData());
 	int l, r, mid;  // array_[0].first is invalid
 	while ( !bptp->IsLeafPage() ) {
     	internal = reinterpret_cast< InternalPage* >(bptp);
     	l = 1;
-    	r = internal->GetSize();
+    	r = internal->GetSize() - 1;
     	mid = 0;
     	while (l <= r) {
     		mid = l + (r + 1 - l) / 2;                             // the root of (l+r)/2
@@ -122,13 +126,11 @@ auto BPLUSTREE_TYPE::Insert(const KeyType &key, const ValueType &value, Transact
         		break;
     		}
     	}
-    	path.emplace_back(r);
+    	path.emplace_back(r, internal->GetPageId());
 		bptp = reinterpret_cast< BPlusTreePage* >(buffer_pool_manager_->FetchPage(internal->ValueAt(r))->GetData());
 	}
 	leaf = reinterpret_cast< LeafPage* >(bptp);
-	l = 0;
-	r = leaf->GetSize() - 1;
-	mid = 0;
+	l = 0; r = leaf->GetSize() - 1; mid = 0;
 	while (l <= r) {
     	mid = l + (r + 1 - l) / 2;
     	if (comparator(key, leaf->KeyAt(mid)) < 0) {
@@ -142,141 +144,89 @@ auto BPLUSTREE_TYPE::Insert(const KeyType &key, const ValueType &value, Transact
   	if (l <= r) {
     	return false;
   	}  // duplicate
-	MappingType* ptr = reinterpret_cast<MappingType*>(leaf + 28);
-	for (int i = leaf.GetSize() - 1; i >= l; i--) {
-    	ptr[i + 1] = ptr[i];
+	MappingType* ptr_leaf = reinterpret_cast<MappingType*>(leaf) + 28;
+	for (int i = leaf.GetSize() - 1; i >= l; --i) {
+    	ptr_leaf[i + 1] = ptr_leaf[i];
 	}
-	ptr[l] = std::make_pair(key, value);
+	ptr_leaf[l] = std::make_pair(key, value);
 	leaf->IncreaseSize(1);
-	page_id_t cur_id, parent_id;
+	
+	buffer_pool_manager_->UnpinPgImp(leaf->GetPageId(), false);
 	if (leaf->GetSize() < leaf->GetMaxSize()) {
-    cur_id = leaf->GetPageId();
-    parent_id = leaf->GetParentId();
-    while (parent_id != INVALID_PAGE_ID) {
-      buffer_pool_manager_->unpinPgImp(cur_id, true);
-      cur_id = parent_id;
-      //page = buffer_pool_manager_->FetchPgImp(cur_id);
-      page_internal = reinterpret_cast<InternalPage *>(buffer_pool_manager_->FetchPgImp(cur_id));
-      parent_id = internal->GetParentId();
-    }
-    return true;
-  }
+		for(int i = path.size() - 1; i >= 0; --i){
+			buffer_pool_manager_->UnpinPgImp(path[i], false);
+		}
+    	return true;
+	}
+//***************************************************************
+//******                     overflow                       *****
+//***************************************************************
+  	LeafPage *sptLeaf; page_id_t sptLeafId;
+	page_id_t cur_id, parent_id;
+  	cur_id = leaf->GetPageId(); 
+	parent_id = leaf->GetParentId();
+	sptLeaf = reinterpret_cast< LeafPage* >(buffer_pool_manager_->NewPgImp(&sptLeafId)->GetData());
+  	sptLeaf->Init(sptLeafId, parent_id, leaf_max_size_);
+	sptLeaf->SetNextPageId(leaf->GetNextPageId);
+  	leaf->SetNextPageId(sptLeafId);
 
-  //***************************************************************
-  //******                     overflow                       *****
-  //***************************************************************
-  LeafPage *leaf_split;
-  Page *page_split;
-  page_id_t old_split_id;
-  curr_id = page_leaf->GetPageId();
-  parent_id = page_leaf->GetParentId();
+  	KeyType of_key = leaf->KeyAt((leaf_max_size_) / 2);  // overflow
+	MappingType* ptr_spt = reinterpret_cast<MappingType*>(sptLeaf) + 28;
+  	memcpy(ptr_spt, ptr + (leaf_max_size_) / 2, sizeof(MappingType) * ((leaf_max_size_ + 1) / 2));
+  	leaf->SetSize((leaf_max_size_) / 2);
+  	sptLeaf->SetSize((leaf_max_size_ + 1) / 2);
+  	memset(leaf->GetArray()+(leaf_max_size_)/2, 0, sizeof(MappingType)*(leaf_max_size_+1)/2);
+  	buffer_pool_manager_->UnpinPgImp(sptLeafId, true);
+  	buffer_pool_manager_->UnpinPgImp(curr_id, true);
 
-  page_split = buffer_pool_manager_->NewPgImp(&old_split_id);
-  leaf_split = reinterpret_cast<LeafPage *>(page_split->GetData());
-  leaf_split->Init(old_split_id, parent_id, leaf_max_size_);
-
-  leaf_split->SetNextPageId(page_leaf->GetNextPageId);
-  page_leaf->SetNextPageId(old_split_id);
-
-  KeyType key_overflow = page_leaf->KeyAt((leaf_max_size_) / 2);  // overflow
-  memcpy(leaf_split->GetArray(), page_leaf->GetArray() + (leaf_max_size_) / 2,
-         sizeof(MappingType) * ((leaf_max_size_ + 1) / 2));
-  page_leaf->SetSize((leaf_max_size_) / 2);
-  leaf_split->SetSize((leaf_max_size_ + 1) / 2);
-  // Note:memset(page_leaf->GetArray()+(leaf_max_size_)/2,0,sizeof(MappingType)*(leaf_max_size_+1)/2);
-
-  buffer_pool_manager_->UnpinPgImp(old_splid_id, true);
-  buffer_pool_manager_->UnpinPgImp(curr_id, true);
-
-  int pos;
-  curr_id = page_leaf->GetPageId();
-  parent_id = page_internal->GetParentPageId();
-  // std::pair(key_flow,_old_split_id);
-  while (1) {  // parent_id!=INVALID_PAGE_ID){
-    pos = index_pos.back();
-    index_pos.pop_back();
-    page = buffer_pool_manager_->FetchPgImp(parent_id);
-    page_internal = reinterpret_cast<InternalPage *>(page->GetData());
-    curr_id = page_internal->GetPageId();
-    parent_id = page_internal->GetParentPageId();
-
-    if ((int k = page_internal->GetSize()) < internal_max_size_) {
-      array = Page_internal->GetArray();
-      for (k; k > pos; k--) {
-        array[k + 1] = array[k];
-      }
-      array[pos + 1] = std::make_pair(key_overflow, old_split_id);
-      page_internal->IncreaseSize(1);
-
-      while (parent_id != INVALID_PAGE_ID) {
-        buffer_pool_manager_->UnpinPgImp(curr_id, true);
-        curr_id = parent_id;
-        page = buffer_pool_manager_->FetchPgImp(curr_id);
-        page_internal = reinterpret_cast<InternalPage *>(page->GetData());
-        parent_id = page_internal->GetParentId();
-      }
-      buffer_pool_manager_->UnpinPgImp(curr_id, true);
-      // break;
-      return true;
-    }
-
-    InternalPage *internal_split;
-    page_id_t new_split_id;
-    page_split = buffer_pool_manager_->NewPgImp(&new_split_id);
-    internal_split = reinterpret_cast<InternalPage *>(page_split->GetData());
-
-    internal_split->Init(new_split_id, parent_id, internal_max_size_);
-
-    // key_overflow=page_internal->KeyAt((internal_max_size_+1)/2+1);
-
-    array = page_intrenal->GetArray();
-    array_2 = internal_split->GetArray();
-
-    memcpy(array_2, array[(internal_max_size_ / 2 + 1)], sizeof(MappingType) * ((internal_max_size_ + 1) / 2));
-    // key_overflow=array_2[0].first;
-    page_internal->SetSize(internal_max_size_ / 2);
-    internal_split->SetSize((internal_max_size_ + 1) / 2);
-
-    /*l=1;r=internal_insert->GetSize();
-    while(l<=r){
-            mid=l+(r+1-l)/2;
-            if(comparator(key , page_leaf->KeyAt(mid))<0){
-                    r=mid-1;
-            }else if(comparator(page_leaf->KeyAt(mid) , key)<0){
-                    l=mid+1;
-            }else{
-                    break;
-            }
-    }//l;
-    array=internal_insert->GetArray();
-    for(int k=internal_insert->GetSize();k>=l;k--){
-            array[k+1]=array[k];
-    }
-    array[l]=std::make_pair(Key_overflow,old_split_id);*/
-
-    if (pos <= (internal_max_size_ / 2 + 1)) {
-      InsertIntoInternal_pos(page_internal, key_flow, old_split_id);
-    } else {
-      InsertIntoInternal_pos(internal_split, key_flow, old_split_id);
-    }
-
-    key_overflow = array_2[0].first;
+  	cur_id = internal->GetPageId();
+  	parent_id = internal->GetParentPageId();
+	while (1) {  // parent_id!=INVALID_PAGE_ID){
+    	int pos = path.back();
+    	path.pop_back();
+    	internal = reinterpret_cast<InternalPage *>(buffer_pool_manager_->FetchPgImp(pos)->GetData());
+    	curr_id = internal->GetPageId();
+    	parent_id = internal->GetParentPageId();
+    	if (internal->GetSize() < internal_max_size_) {
+      		ptr_internal = reinterpret_cast<MappingType*>(internal) + 24;
+      		for (int i = internal->GetSize(); i >= pos; --i) {
+        		ptr_internal[i + 1] = ptr_internal[i];
+      		}
+      		ptr_internal[pos + 1] = std::make_pair(of_key, sptLeafId);
+      		internal->IncreaseSize(1);
+      		while (parent_id != INVALID_PAGE_ID) {
+        		buffer_pool_manager_->UnpinPgImp(curr_id, true);
+        		curr_id = parent_id;
+        		page = buffer_pool_manager_->FetchPgImp(curr_id);
+        		page_internal = reinterpret_cast<InternalPage *>(page->GetData());
+        		parent_id = page_internal->GetParentId();
+      		}
+      		buffer_pool_manager_->UnpinPgImp(curr_id, true);
+      		return true;
+		}else{
+			InternalPage *sptInter;
+    		page_id_t sptInterId;
+    		sptInter = reinterpret_cast< InternalPage* >(buffer_pool_manager_->NewPgImp(&sptInterId)->GetData());
+    		sptInter->Init(sptInterId, parent_id, internal_max_size_);
+    		of_key = internal->KeyAt((internal_max_size_+1)/2+1);
+    		memcpy(array_2, array[(internal_max_size_ / 2 + 1)], sizeof(MappingType) * ((internal_max_size_ + 1) / 2));
+    		internal->SetSize(internal_max_size_ / 2);
+    		sptInter->SetSize((internal_max_size_ + 1) / 2);
     // parent_id=page_internal->GetParentPageId();
-    buffer_pool_manager_->UnpinPgImp(curr_id, true);
-    buffer_pool_manager_->UnpinPgImp(new_split_id, true);
-    old_split_id = new_split_id;
-
-    if (curr_id = root_page_id_) {
+    		buffer_pool_manager_->UnpinPgImp(cur_id, true);
+    		buffer_pool_manager_->UnpinPgImp(sptInterId, true);	
+    		if ( cur_id == root_page_id_ ) {
       // old_split_id=new_split_id;
-      page_split = buffer_pool_manager_->NewPgImp(&new_split_id);
-      internal_split = reinterpret_cast<InternalPage *>(page_split->GetData());
-      array = internal_split->GetArray();
-      array[0].second = curr_id;
-      array[1] = std::make_pair(key_overflow, old_split_id);
-      buffer_pool_manager_->UnpinPgImp(new_split_id, true);
+      			page_split = buffer_pool_manager_->NewPgImp(&root_Page_id_);
+      			internal_split = reinterpret_cast<InternalPage *>(page_split->GetData());
+      			array = internal_split->GetArray();
+      			array[0].second = curr_id;
+      			array[1] = std::make_pair(key_overflow, old_split_id);
+      			buffer_pool_manager_->UnpinPgImp(new_split_id, true);
+			}
     }
     return true;
-  }
+}
 
   /*****************************************************************************
    * REMOVE
@@ -288,65 +238,58 @@ auto BPLUSTREE_TYPE::Insert(const KeyType &key, const ValueType &value, Transact
    * delete entry from leaf page. Remember to deal with redistribute or merge if
    * necessary.
    */
-  INDEX_TEMPLATE_ARGUMENTS
-  void BPLUSTREE_TYPE::Remove(const KeyType &key, Transaction *transaction) {
-    if (root_page_id_ == INVALID_PAGE_ID) {
-      return;
-    }
-    Page *page;
-    InternalPage *page_internal;
-    LeafPage *page_leaf;
-    page = buffer_pool_manager_->FetchPgImp(root_page_id_);
-    IndexPageType page_type;
-    memcpy(page_type, page->GetData());
+INDEX_TEMPLATE_ARGUMENTS
+void BPLUSTREE_TYPE::Remove(const KeyType &key, Transaction *transaction) {
+	if (root_page_id_ == INVALID_PAGE_ID) return;
+	BPlusTree *bptp; InternalPage *internal; LeafPage *leaf;
+    bptp = reinterpret_cast< BPlusTreePage* >(buffer_pool_manager_->FetchPage(root_page_id_)->GetData());
     int l, r, mid;
-    std::vector<int> index_pos;
-    while (page_type == INTERNAL_PAGE) {
-      page_internal = reinterpret_cast<InternalPage *>(page->GetData());
-      l = 1;
-      r = page_internal->GetSize() - 1;
-      mid = 0;
-      while (l <= r) {
-        mid = l + (r + 1 - l) / 2;                             // the root of (l+r)/2
-        if (comparator(key, page_internal->KeyAt(mid)) < 0) {  // key<KeyAt(mid)
-          r = mid - 1;
-        } else if (comparator(page_internal->KeyAt(mid), key) < 0) {
-          l = mid + 1;
-        } else {
-          r = mid;
-          break;
-        }
-      }
-      index_pos.emplace_back(r);
-      page = bufffer_pool_manager_->FetchPgImp(page_internal->ValueAt(r));
-      memcpy(page_type, page->GetData(), sizeof(IndexPageType));
+    std::vector<int> path;
+    while ( !bptp->IsLeafPage() ) {
+    	internal = reinterpret_cast< InternalPage* >( bptp );
+      	l = 1;
+      	r = internal->GetSize() - 1;
+      	mid = 0;
+      	while (l <= r) {
+        	mid = l + (r + 1 - l) / 2;                             // the root of (l+r)/2
+        	if (comparator(key, internal->KeyAt(mid)) < 0) {  // key<KeyAt(mid)
+          		r = mid - 1;
+        	} else if (comparator(internal->KeyAt(mid), key) < 0) {
+          		l = mid + 1;
+        	} else {
+          		r = mid;
+          		break;
+        	}
+      	}
+      	path.emplace_back(r,);
+      	bptp = bufffer_pool_manager_->FetchPgImp(internal->ValueAt(r));
     }
-    page_leaf = reinterpret_cast<LeafPage *>(page->GetData());
+    leaf = reinterpret_cast< LeafPage* >( bptp );
     l = 0;
-    l = page_leaf->GetSize() - 1;
+    r = leaf->GetSize() - 1;
     mid = 0;
     while (l <= r) {
-      mid = l + (r + 1 - l) / 2;
-      if (comparator(key, page_leaf->KeyAt(mid)) < 0) {
-        r = mid - 1;
-      } else if (comparator(page_leaf->KeyAt(mid), key) < 0) {
-        l = mid + 1;
-      } else {
-        // r=mid;
-        break;
-      }
+      	mid = l + (r + 1 - l) / 2;
+      	if (comparator(key, leaf->KeyAt(mid)) < 0) {
+        	r = mid - 1;
+      	} else if (comparator(leaf->KeyAt(mid), key) < 0) {
+        	l = mid + 1;
+      	} else {
+        	// r=mid;
+        	break;
+      	}
     }
     if (l <= r) {
-      MappingType *array = page_leaf->GetArray();
-      for (int k = mid; k < page_leaf->GetSize() - 1; k++) {
-        array[k] = array[k + 1];
-      }
-      page_leaf->IncreaseSize(-1);
+      	MappingType *ptrLeaf = reinterpret_cast< LeafPage* >(leaf) + 28;
+      	for (int i = r; i < leaf->GetSize() - 1; ++i) {
+        	ptrLeaf[i] = ptrLeaf[ i + 1 ];
+      	}
+      	leaf->IncreaseSize(-1);
     }
-    if (page_leaf->GetSize() >= ((leaf_max_size_ + 0) / 2)) {
-      return;
+    if (leaf->GetSize() >= leaf->GetMinSize() ) {
+      	return;
     }
-    int pos = index_pos.back();
+    int pos = path.back();
     index_pos.pop_back();
     // 1
     Page *page_bro, *page_par;
@@ -375,8 +318,6 @@ auto BPLUSTREE_TYPE::Insert(const KeyType &key, const ValueType &value, Transact
       }
     }
     // if(0<pos){
-    //	page_parent=
-    //	page_bro=buffer_pool_manager_->FetchPgImp(page);}
     // 2
     if (pos < page_leaf->GetMaxSize() - 1) {
       page_bro = buffer_pool_manager_->FetchPgImp(internal_par->ValueAt(pos + 1));
