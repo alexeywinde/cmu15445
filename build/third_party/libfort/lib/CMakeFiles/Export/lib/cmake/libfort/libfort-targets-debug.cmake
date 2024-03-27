@@ -1,11 +1,11 @@
 #----------------------------------------------------------------
-# Generated CMake target import file for configuration "Debug".
+# Generated CMake target import file for configuration "DEBUG".
 #----------------------------------------------------------------
 
 # Commands may need to know the format version.
 set(CMAKE_IMPORT_FILE_VERSION 1)
 
-# Import target "libfort::fort" for configuration "Debug"
+# Import target "libfort::fort" for configuration "DEBUG"
 set_property(TARGET libfort::fort APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(libfort::fort PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"

@@ -48,7 +48,7 @@ set_target_properties(fort PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "/home/yangwende/cmu15445/third_party/libfort/lib"
 )
 
-# Import target "fort" for configuration "Debug"
+# Import target "fort" for configuration "DEBUG"
 set_property(TARGET fort APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(fort PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"
